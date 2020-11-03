@@ -9,13 +9,19 @@
   <body>
     <div id="mocha"></div>
 
+    <!--  target div needed for autocomplete.test.js -->
+    <div id="target"></div>
+
     <script src="https://unpkg.com/chai/chai.js"></script>
     <script src="https://unpkg.com/mocha/mocha.js"></script>
 
     <script class="mocha-init">
       mocha.setup('bdd');
       mocha.checkLeaks();
+      const expect = chai.expect;
     </script>
+    <script src="../utils.js"></script>
+    <script src="../autocomplete.js"></script>
     <script src="autocomplete.test.js"></script>
     <script class="mocha-exec">
       mocha.run();
